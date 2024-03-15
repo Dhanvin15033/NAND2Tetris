@@ -1,0 +1,15 @@
+// Created by Dhanvin for internal use
+
+/**
+ * 3 input And gate:
+ * out = (((a == 1) && (b == 1)) && (c==1)), 1, 0) 
+ */
+
+CHIP And3 {
+    IN a, b, c;
+    OUT out;
+    
+    PARTS:
+    And (a=a, b=b, out=aAndb);
+    And (a=aAndb, b=c, out=out);
+}

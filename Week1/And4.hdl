@@ -1,0 +1,15 @@
+// Created by Dhanvin for internal use
+
+/**
+ * 4 input And gate:
+ * out = (((a == 1) && (b == 1) && (c==1) && (d==1)), 1, 0) 
+ */
+
+CHIP And4 {
+    IN a, b, c, d;
+    OUT out;
+    
+    PARTS:
+    And3 (a=a, b=b, c=c, out=aAndbAndc);
+    And (a=aAndbAndc, b=d, out=out);
+}
